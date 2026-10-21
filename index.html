@@ -1,201 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Andrei Marius Smedoiu — Computer Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrei Marius Smedoiu — Computer Engineering @ UniTrento</title>
+<meta name="description" content="Studente di Ingegneria Informatica all’Università di Trento. Progetti in C, sistemi, algoritmi e software.">
+<style>
+:root{--bg:#1e2327;--panel:#262b2f;--card:#2b3a1f;--chip:#2f4a14;--chip-t:#7ee21b;--text:#e9ecee;--muted:#a9b0b5;--link:#9d8cff;--accent:#7ee21b;--btn:#35590f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 "Roboto","Segoe UI",system-ui,sans-serif}
+a{color:var(--link)}
+.layout{display:grid;grid-template-columns:min(31vw,435px) 1fr;gap:2.5rem;max-width:1500px;margin:0 auto;padding:0 1.5rem}
+aside{background:var(--panel);border-radius:1.5rem;padding:1.6rem;align-self:start;position:sticky;top:0;margin-top:1.5rem;max-height:calc(100vh - 1.5rem);overflow:auto}
+.avatar{width:min(100%,213px);aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
+h1{font-size:2.5rem;line-height:1.1;margin:1.2rem 0 .2rem;font-weight:500}
+.handle{color:var(--muted);font-size:1.25rem;margin:0 0 1.2rem}
+.links{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.55rem}
+.links li{display:flex;gap:.7rem;align-items:center}
+.links svg{width:1.6rem;height:1.6rem;fill:currentColor;flex:none}
+aside h2{font-size:1.3rem;margin:1.4rem 0 .6rem;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{background:var(--chip);color:var(--chip-t);border:0;border-radius:.6rem;padding:.3rem .7rem;font:inherit;font-size:.95rem;cursor:pointer}
+.chip:hover,.chip:focus-visible,.chip.on{outline:2px solid var(--accent);outline-offset:1px}
+main{padding:1.5rem 0 3rem;min-width:0}
+main h2.title{font-size:2rem;margin:0 0 1rem;font-weight:500;text-decoration:underline wavy var(--accent);text-underline-offset:.45rem;text-decoration-thickness:1px;display:inline-block}
+.about{max-width:70ch;color:var(--muted);margin:.4rem 0 1.4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:1rem}
+.card{background:var(--card);border-radius:1.1rem;padding:1.1rem 1.3rem;display:flex;flex-direction:column;gap:.6rem}
+.card.hide{display:none}
+.card h3{margin:0;font-size:1.5rem;font-weight:500}
+.card p{margin:0;color:var(--text);opacity:.92}
+.card a.title{color:inherit;text-decoration:none}
+.card a.title:hover{text-decoration:underline}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.6rem 0 1rem}
+.cat{background:var(--panel);border:0;border-radius:1rem;color:var(--text);font:inherit;font-size:1.1rem;padding:1.2rem;cursor:pointer;min-height:5.5rem}
+.cat:hover,.cat:focus-visible,.cat.on{outline:2px solid var(--accent)}
+.hint{margin:1.8rem 0 .2rem;font-weight:500}
+.hint i{font-weight:400;color:var(--muted)}
+.all{background:var(--btn);color:var(--chip-t);border:0;border-radius:1rem;font:inherit;font-size:1.6rem;padding:1.4rem 3rem;cursor:pointer;margin-top:.8rem}
+.all:hover,.all:focus-visible{outline:2px solid var(--accent)}
+footer{color:var(--muted);font-size:.9rem;margin-top:2.5rem}
+@media(max-width:860px){.layout{grid-template-columns:1fr}aside{position:static;max-height:none}h1{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
+<div class="layout">
+<aside>
+  <img class="avatar" src="https://avatars.githubusercontent.com/u/179920327?v=4" alt="Foto di Andrei Marius Smedoiu">
+  <h1>Andrei Marius Smedoiu</h1>
+  <p class="handle">@smedoiuandrei</p>
+  <ul class="links">
+    <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><a href="https://github.com/smedoiuandrei">@smedoiuandrei</a></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V10h3zM6.5 8.7a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.4c0-1.1 0-2.4-1.5-2.4S13 13.400 13 14.500V19h-3V10h2.800v1.200h.1a3 3 0 0 1 2.700-1.500c2.900 0 3.400 1.900 3.400 4.400z"/></svg><a href="https://www.linkedin.com/in/andrei-smedoiu-897104264">Andrei Smedoiu</a></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg><a href="mailto:smedoiuandreimarius05@gmail.com">smedoiuandreimarius05@gmail.com</a></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.250 7 13 7 13s7-7.750 7-13a7 7 0 0 0-7-7zm0 9.500A2.500 2.500 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg><span>Ala (Trento), Italia</span></li>
+  </ul>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <span class="nav-logo">AMS<span class="blink">_</span></span>
-    <ul>
-      <li><a href="#about">about</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#education">education</a></li>
-      <li><a href="#languages">languages</a></li>
-      <li><a href="#contact">contact</a></li>
-    </ul>
-  </nav>
+  <h2>Linguaggi</h2>
+  <div class="chips">
+    <button class="chip" data-f="c">C</button>
+    <button class="chip" data-f="cpp">C++</button>
+    <button class="chip" data-f="java">Java</button>
+    <button class="chip" data-f="python">Python</button>
+    <button class="chip" data-f="js">JavaScript</button>
+    <button class="chip" data-f="asm">Assembly</button>
+    <button class="chip" data-f="vhdl">VHDL</button>
+  </div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-content">
-      <p class="hero-tag">// BSc Computer Engineering</p>
-      <h1>Andrei Marius<br/><span class="accent">Smedoiu</span></h1>
-      <p class="hero-sub">Low-level systems · Algorithms · Software Engineering</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-primary">Get in touch</a>
-        <a href="#skills" class="btn-outline">View skills</a>
-      </div>
-    </div>
+  <h2>Tecnologie</h2>
+  <div class="chips">
+    <button class="chip" data-f="linux">Linux</button>
+    <button class="chip" data-f="bash">Bash</button>
+    <button class="chip" data-f="git">Git</button>
+    <button class="chip" data-f="graphics">Graphics</button>
+    <button class="chip" data-f="ipc">POSIX IPC</button>
+    <button class="chip" data-f="latex">LaTeX</button>
+  </div>
 
-  
-  </section>
+  <h2>Lingue parlate</h2>
+  <div class="chips">
+    <span class="chip">Italiano C2</span>
+    <span class="chip">Română C2</span>
+    <span class="chip">English B2 (IELTS)</span>
+  </div>
+</aside>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-label">01 / about</div>
-    <div class="about-content">
-      <div class="about-text">
-        <h2>Building the bridge between <span class="accent">theory</span> and <span class="accent">engineering</span></h2>
-        <p>I'm an enthusiastic Computer Engineering student with solid foundations in low-level and object-oriented programming. Born in Italy, raised between cultures, currently studying at the University of Trento.</p>
-        <p>My goal is to absorb industry best practices, tackle hard technical problems, and continuously grow as a software engineer in a top-tier tech company.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat">
-          <span class="stat-num">2027</span>
-          <span class="stat-label">Expected graduation</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">4+</span>
-          <span class="stat-label">Languages spoken</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Programming paradigms</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<main>
+  <h2 class="title">Progetti</h2>
+  <p class="about">Studente di Ingegneria Informatica, Telecomunicazioni ed Elettronica all’Università di Trento (laurea prevista nel 2027). Mi interessano sistemi a basso livello, algoritmi e ingegneria del software. Cerco tirocini e collaborazioni.</p>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-label">02 / skills</div>
-    <h2>Technical <span class="accent">Arsenal</span></h2>
-    <div class="skills-grid">
+  <div class="grid" id="grid">
+    <article class="card" data-tags="c linux graphics systems">
+      <h3><a class="title" href="https://github.com/smedoiuandrei/aircraft-radar">Aircraft radar</a></h3>
+      <p>Radar aerei in tempo reale in C con raylib: scansione rotante, dati ADS-B reali da OpenSky Network e click su un aereo per vedere quota e velocità.</p>
+      <div class="chips"><span class="chip">C</span><span class="chip">Graphics</span><span class="chip">Linux</span><span class="chip">Dati reali</span></div>
+    </article>
 
-      <div class="skill-card">
-        <div class="skill-icon">{ }</div>
-        <h3>Programming Languages</h3>
-        <div class="tags">
-          <span class="tag">C</span>
-          <span class="tag">C++</span>
-          <span class="tag">Java</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
+    <article class="card" data-tags="c bash linux ipc systems university git">
+      <h3><a class="title" href="https://github.com/Gelminaio/os-blockchain-project">Blockchain multi-processo</a></h3>
+      <p>Simulazione di blockchain in cui nodi, miner e client sono processi separati che comunicano con IPC POSIX. Proof-of-work simulata, alberi di Merkle, SHA-256 da zero e uno script Bash per verificare la catena.</p>
+      <div class="chips"><span class="chip">C</span><span class="chip">Bash</span><span class="chip">POSIX IPC</span><span class="chip">Università</span><span class="chip">Git</span></div>
+    </article>
 
-      <div class="skill-card">
-        <div class="skill-icon">⚙</div>
-        <h3>Hardware & Low-Level</h3>
-        <div class="tags">
-          <span class="tag">Assembly</span>
-          <span class="tag">VHDL</span>
-        </div>
-      </div>
+    <article class="card" data-tags="university ai latex">
+      <h3>Fedrigoni OGA Challenge</h3>
+      <p>Progetto di gruppo sulla pianificazione dei turni assistita da AI per uno stabilimento manifatturiero: report, analisi comparativa degli strumenti esistenti e business case con ROI.</p>
+      <div class="chips"><span class="chip">AI</span><span class="chip">Università</span><span class="chip">LaTeX</span></div>
+    </article>
 
-      <div class="skill-card">
-        <div class="skill-icon">$_</div>
-        <h3>Developer Tools</h3>
-        <div class="tags">
-          <span class="tag">Git</span>
-          <span class="tag">Linux</span>
-          <span class="tag">LaTeX</span>
-        </div>
-      </div>
+    <article class="card" data-tags="js web graphics">
+      <h3><a class="title" href="https://smedoiuandrei.github.io">Questo sito</a></h3>
+      <p>Il mio portfolio su GitHub Pages: HTML, CSS e JavaScript senza framework.</p>
+      <div class="chips"><span class="chip">JavaScript</span><span class="chip">Web</span></div>
+    </article>
+  </div>
 
-      <div class="skill-card">
-        <div class="skill-icon">∑</div>
-        <h3>Focus Areas</h3>
-        <div class="tags">
-          <span class="tag">Algorithms</span>
-          <span class="tag">Software Dev</span>
-          <span class="tag">Architecture</span>
-        </div>
-      </div>
+  <p class="hint">Progetti per categoria <i>(puoi filtrare anche cliccando sui chip, ad es. <button class="chip" data-f="c">C</button>)</i></p>
+  <div class="cats">
+    <button class="cat" data-f="systems">Sistemi e basso livello</button>
+    <button class="cat" data-f="graphics">Grafica e dati reali</button>
+    <button class="cat" data-f="ai">Intelligenza artificiale</button>
+    <button class="cat" data-f="web">Web</button>
+    <button class="cat" data-f="university">Progetti universitari</button>
+  </div>
+  <button class="all" id="all">Tutti i progetti</button>
 
-    </div>
-  </section>
+  <footer>Andrei Marius Smedoiu · Ingegneria Informatica @ UniTrento · Fatto con HTML, CSS e JS</footer>
+</main>
+</div>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="section-label">03 / education</div>
-    <h2>Academic <span class="accent">Path</span></h2>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2024 — 2027</div>
-        <div class="timeline-content">
-          <h3>BSc in Computer, Communications and Electronic Engineering</h3>
-          <p class="timeline-place">University of Trento · Trento, Italy</p>
-          <ul>
-            <li>Core Technologies: C, C++, Python, Java</li>
-            <li>Hardware & Systems: Assembly, VHDL</li>
-            <li>Focus: Algorithms, software development, low-level programming architecture</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2019 — 2024</div>
-        <div class="timeline-content">
-          <h3>High School Diploma in Applied Sciences</h3>
-          <p class="timeline-place">Liceo Antonio Rosmini · Rovereto, Italy</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LANGUAGES -->
-  <section id="languages">
-    <div class="section-label">04 / languages</div>
-    <h2>Languages <span class="accent">Spoken</span></h2>
-    <div class="lang-grid">
-      <div class="lang-card">
-        <span class="lang-flag">🇮🇹</span>
-        <span class="lang-name">Italian</span>
-        <span class="lang-level">C2</span>
-        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-      </div>
-      <div class="lang-card">
-        <span class="lang-flag">🇷🇴</span>
-        <span class="lang-name">Romanian</span>
-        <span class="lang-level">C2</span>
-        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-      </div>
-      <div class="lang-card">
-        <span class="lang-flag">🇬🇧</span>
-        <span class="lang-name">English</span>
-        <span class="lang-level">B2 — IELTS</span>
-        <div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-label">05 / contact</div>
-    <h2>Let's <span class="accent">Connect</span></h2>
-    <p class="contact-sub">Open to internships, collaborations, and new challenges.</p>
-    <div class="contact-links">
-      <a href="mailto:smedoiuandreimarius05@gmail.com" class="contact-item">
-        <span class="contact-icon">✉</span>
-        <span>smedoiuandreimarius05@gmail.com</span>
-      </a>
-      <a href="tel:+393894485239" class="contact-item">
-        <span class="contact-icon">☎</span>
-        <span>+39 389 448 5239</span>
-      </a>
-      <div class="contact-item no-link">
-        <span class="contact-icon">📍</span>
-        <a href="https://maps.google.com/?q=Ala,Trento,Italy" target="_blank" style="color:inherit; text-decoration:none;">Ala (Trento), Italy</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Andrei Marius Smedoiu · <span class="accent">Computer Engineering @ UniTrento</span></p>
-    <p class="footer-sub">Built with HTML, CSS & JS · Hosted on GitHub Pages</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var triggers=[].slice.call(document.querySelectorAll('[data-f]'));
+  function apply(f){
+    cards.forEach(function(c){
+      var ok=!f||c.dataset.tags.split(' ').indexOf(f)>-1;
+      c.classList.toggle('hide',!ok);
+    });
+    triggers.forEach(function(t){t.classList.toggle('on',!!f&&t.dataset.f===f);});
+  }
+  triggers.forEach(function(t){
+    t.addEventListener('click',function(){
+      var same=t.classList.contains('on');
+      apply(same?null:t.dataset.f);
+      document.getElementById('grid').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  document.getElementById('all').addEventListener('click',function(){apply(null);});
+})();
+</script>
 </body>
 </html>
