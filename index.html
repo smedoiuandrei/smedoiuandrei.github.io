@@ -5,45 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Andrei Marius Smedoiu — Computer Engineering @ UniTrento</title>
 <meta name="description" content="Studente di Ingegneria Informatica all’Università di Trento. Progetti in C, sistemi, algoritmi e software.">
-<style>
-:root{--bg:#1e2327;--panel:#262b2f;--card:#2b3a1f;--chip:#2f4a14;--chip-t:#7ee21b;--text:#e9ecee;--muted:#a9b0b5;--link:#9d8cff;--accent:#7ee21b;--btn:#35590f}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 "Roboto","Segoe UI",system-ui,sans-serif}
-a{color:var(--link)}
-.layout{display:grid;grid-template-columns:min(31vw,435px) 1fr;gap:2.5rem;max-width:1500px;margin:0 auto;padding:0 1.5rem}
-aside{background:var(--panel);border-radius:1.5rem;padding:1.6rem;align-self:start;position:sticky;top:0;margin-top:1.5rem;max-height:calc(100vh - 1.5rem);overflow:auto}
-.avatar{width:min(100%,213px);aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
-h1{font-size:2.5rem;line-height:1.1;margin:1.2rem 0 .2rem;font-weight:500}
-.handle{color:var(--muted);font-size:1.25rem;margin:0 0 1.2rem}
-.links{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.55rem}
-.links li{display:flex;gap:.7rem;align-items:center}
-.links svg{width:1.6rem;height:1.6rem;fill:currentColor;flex:none}
-aside h2{font-size:1.3rem;margin:1.4rem 0 .6rem;font-weight:500}
-.chips{display:flex;flex-wrap:wrap;gap:.45rem}
-.chip{background:var(--chip);color:var(--chip-t);border:0;border-radius:.6rem;padding:.3rem .7rem;font:inherit;font-size:.95rem;cursor:pointer}
-.chip:hover,.chip:focus-visible,.chip.on{outline:2px solid var(--accent);outline-offset:1px}
-main{padding:1.5rem 0 3rem;min-width:0}
-main h2.title{font-size:2rem;margin:0 0 1rem;font-weight:500;text-decoration:underline wavy var(--accent);text-underline-offset:.45rem;text-decoration-thickness:1px;display:inline-block}
-.about{max-width:70ch;color:var(--muted);margin:.4rem 0 1.4rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:1rem}
-.card{background:var(--card);border-radius:1.1rem;padding:1.1rem 1.3rem;display:flex;flex-direction:column;gap:.6rem}
-.card.hide{display:none}
-.card h3{margin:0;font-size:1.5rem;font-weight:500}
-.card p{margin:0;color:var(--text);opacity:.92}
-.card a.title{color:inherit;text-decoration:none}
-.card a.title:hover{text-decoration:underline}
-.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.6rem 0 1rem}
-.cat{background:var(--panel);border:0;border-radius:1rem;color:var(--text);font:inherit;font-size:1.1rem;padding:1.2rem;cursor:pointer;min-height:5.5rem}
-.cat:hover,.cat:focus-visible,.cat.on{outline:2px solid var(--accent)}
-.hint{margin:1.8rem 0 .2rem;font-weight:500}
-.hint i{font-weight:400;color:var(--muted)}
-.all{background:var(--btn);color:var(--chip-t);border:0;border-radius:1rem;font:inherit;font-size:1.6rem;padding:1.4rem 3rem;cursor:pointer;margin-top:.8rem}
-.all:hover,.all:focus-visible{outline:2px solid var(--accent)}
-footer{color:var(--muted);font-size:.9rem;margin-top:2.5rem}
-@media(max-width:860px){.layout{grid-template-columns:1fr}aside{position:static;max-height:none}h1{font-size:2rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="layout">
@@ -131,26 +93,6 @@ footer{color:var(--muted);font-size:.9rem;margin-top:2.5rem}
 </main>
 </div>
 
-<script>
-(function(){
-  var cards=[].slice.call(document.querySelectorAll('.card'));
-  var triggers=[].slice.call(document.querySelectorAll('[data-f]'));
-  function apply(f){
-    cards.forEach(function(c){
-      var ok=!f||c.dataset.tags.split(' ').indexOf(f)>-1;
-      c.classList.toggle('hide',!ok);
-    });
-    triggers.forEach(function(t){t.classList.toggle('on',!!f&&t.dataset.f===f);});
-  }
-  triggers.forEach(function(t){
-    t.addEventListener('click',function(){
-      var same=t.classList.contains('on');
-      apply(same?null:t.dataset.f);
-      document.getElementById('grid').scrollIntoView({behavior:'smooth',block:'start'});
-    });
-  });
-  document.getElementById('all').addEventListener('click',function(){apply(null);});
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

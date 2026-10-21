@@ -1,42 +1,19 @@
-// Scroll-triggered fade-in
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('section').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
-});
-
-// Navbar shrink on scroll
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('navbar');
-  if (window.scrollY > 60) {
-    nav.style.padding = '0.75rem 4rem';
-  } else {
-    nav.style.padding = '1.2rem 4rem';
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var triggers=[].slice.call(document.querySelectorAll('[data-f]'));
+  function apply(f){
+    cards.forEach(function(c){
+      var ok=!f||c.dataset.tags.split(' ').indexOf(f)>-1;
+      c.classList.toggle('hide',!ok);
+    });
+    triggers.forEach(function(t){t.classList.toggle('on',!!f&&t.dataset.f===f);});
   }
-});
-
-// Active nav link highlight
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('#navbar ul a');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 200) {
-      current = section.getAttribute('id');
-    }
+  triggers.forEach(function(t){
+    t.addEventListener('click',function(){
+      var same=t.classList.contains('on');
+      apply(same?null:t.dataset.f);
+      document.getElementById('grid').scrollIntoView({behavior:'smooth',block:'start'});
+    });
   });
-  navLinks.forEach(link => {
-    link.style.color = link.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
-  });
-});
+  document.getElementById('all').addEventListener('click',function(){apply(null);});
+})();
