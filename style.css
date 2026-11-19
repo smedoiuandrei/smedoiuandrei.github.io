@@ -193,34 +193,6 @@ a {
   margin-top: 2px;
 }
 
-.status-badge {
-  margin-top: 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.76rem;
-  font-weight: 500;
-  color: var(--accent-secondary);
-  background: rgba(52, 211, 153, 0.1);
-  border: 1px solid rgba(52, 211, 153, 0.25);
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-secondary);
-  box-shadow: 0 0 8px var(--accent-secondary);
-  animation: statusPulse 2s ease-in-out infinite;
-}
-
-@keyframes statusPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(0.85); }
-}
-
 .contact-list {
   list-style: none;
   display: flex;
@@ -537,6 +509,20 @@ a {
   transform: translate(2px, -2px);
 }
 
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent-secondary);
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
 .project-desc {
   color: var(--text-muted);
   font-size: 0.9rem;
@@ -621,6 +607,24 @@ a {
 
 @keyframes dashMove {
   to { stroke-dashoffset: -24; }
+}
+
+.sonar-wave {
+  animation: sonarPing 2.2s ease-out infinite;
+}
+
+.sonar-wave-2 {
+  animation-delay: 0.45s;
+}
+
+.sonar-wave-3 {
+  animation-delay: 0.9s;
+}
+
+@keyframes sonarPing {
+  0% { opacity: 0.15; }
+  45% { opacity: 0.95; }
+  100% { opacity: 0.15; }
 }
 
 .roi-line {

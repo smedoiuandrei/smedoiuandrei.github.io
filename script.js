@@ -10,27 +10,26 @@ const LANGUAGES = [
   { name: "Java", icon: `${DEVICON}/java/java-original.svg` },
   { name: "JavaScript", icon: `${DEVICON}/javascript/javascript-original.svg` },
   { name: "Bash", icon: `${DEVICON}/bash/bash-original.svg` },
-  { name: "HTML", icon: `${DEVICON}/html5/html5-original.svg` },
-  { name: "CSS", icon: `${DEVICON}/css3/css3-original.svg` }
+  { name: "SQL", customIcon: "sql" }
 ];
 
 const TECHNOLOGIES = [
   { name: "Linux", icon: `${DEVICON}/linux/linux-original.svg` },
   { name: "Git", icon: `${DEVICON}/git/git-original.svg` },
-  { name: "LaTeX", icon: `${DEVICON}/latex/latex-original.svg`, invertDark: true },
-  { name: "POSIX IPC", customIcon: "ipc" },
-  { name: "raylib", customIcon: "raylib" },
-  { name: "AI", customIcon: "ai" }
+  { name: "GitHub", icon: `${DEVICON}/github/github-original.svg`, invertDark: true },
+  { name: "CMake", icon: `${DEVICON}/cmake/cmake-original.svg` },
+  { name: "MariaDB", icon: `${DEVICON}/mariadb/mariadb-original.svg` },
+  { name: "DBeaver", icon: `${DEVICON}/dbeaver/dbeaver-original.svg` }
 ];
 
 const SPOKEN_LANGUAGES = [
-  { name: "Italiano", level: "C2" },
-  { name: "Română", level: "C2" },
-  { name: "English", level: "B2 · IELTS" }
+  { name: "Italian", level: "C2" },
+  { name: "English", level: "IELTS B2" }
 ];
 
 const CATEGORIES = [
   "Systems & Low-Level",
+  "Embedded & IoT",
   "Graphics & Real-Time",
   "AI & Strategy",
   "University"
@@ -38,24 +37,35 @@ const CATEGORIES = [
 
 const PROJECTS = [
   {
+    id: "blockchain-ipc",
+    title: "Multi-process blockchain simulation",
+    url: "https://github.com/Gelminaio/os-blockchain-project",
+    description:
+      "Operating Systems group project in C and Bash: nodes, miners and clients run as separate processes over POSIX IPC (FIFOs & signals) with a gossip protocol, simulated proof-of-work and Merkle trees. My contributions: SHA-256 from scratch, Merkle root, IPC layer, miner process and Bash verification tool.",
+    tags: ["C", "Bash", "Linux", "Git", "University"],
+    categories: ["Systems & Low-Level", "University"],
+    banner: "blockchain"
+  },
+  {
+    id: "remote controlled-vehicle",
+    title: "Remote controlled vehicle for low-visibility driving",
+    url: null,
+    status: "In progress · Nov 2026 – Present",
+    description:
+      "University group project for Embedded Software for IoT: sensor-based self-driving vehicle capable of detecting and avoiding obstacles, built on course microcontroller boards.",
+    tags: ["Embedded", "IoT", "University"],
+    categories: ["Embedded & IoT", "University"],
+    banner: "vehicle"
+  },
+  {
     id: "aircraft-radar",
     title: "Aircraft radar",
     url: "https://github.com/smedoiuandrei/aircraft-radar",
     description:
       "Aircraft radar in real-time in C with raylib: rotating scan, real ADS-B data from OpenSky Network and click on an aircraft to see its altitude and speed.",
-    tags: ["C", "raylib", "Graphics", "Linux", "Real data"],
+    tags: ["C", "Graphics", "Linux", "Real data"],
     categories: ["Systems & Low-Level", "Graphics & Real-Time"],
     banner: "radar"
-  },
-  {
-    id: "blockchain-ipc",
-    title: "Blockchain multi-processo",
-    url: "https://github.com/Gelminaio/os-blockchain-project",
-    description:
-      "Simulation of a blockchain where nodes, miners and clients are separate processes that communicate with POSIX IPC. Simulated proof-of-work, Merkle trees, SHA-256 from scratch and a Bash script to verify the chain.",
-    tags: ["C", "Bash", "POSIX IPC", "University", "Git"],
-    categories: ["Systems & Low-Level", "University"],
-    banner: "blockchain"
   },
   {
     id: "fedrigoni-oga",
@@ -70,30 +80,15 @@ const PROJECTS = [
 ];
 
 /* =========================================================
-   CUSTOM SVG ICONS (POSIX IPC, raylib, AI)
+   SQL ICON SVG
    ========================================================= */
 function getCustomSkillSvg(type) {
-  if (type === "ipc") {
+  if (type === "sql") {
     return `
-      <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="4" width="7" height="6" rx="1.5"></rect>
-        <rect x="15" y="14" width="7" height="6" rx="1.5"></rect>
-        <path d="M9 7h4a2 2 0 0 1 2 2v5"></path>
-        <path d="M15 17h-4a2 2 0 0 1-2-2v-5" stroke="#34d399"></path>
-      </svg>`;
-  }
-  if (type === "raylib") {
-    return `
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect x="2.5" y="2.5" width="19" height="19" rx="2" fill="#f8fafc" stroke="#0f172a" stroke-width="2.2"></rect>
-        <text x="12" y="17.5" text-anchor="middle" font-size="6.2" font-weight="700" font-family="monospace" fill="#0f172a">raylib</text>
-      </svg>`;
-  }
-  if (type === "ai") {
-    return `
-      <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2L12 3z" fill="rgba(167,139,250,0.18)"></path>
-        <circle cx="19" cy="5" r="1.4" fill="#38bdf8" stroke="none"></circle>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5.5" rx="7.5" ry="3" fill="rgba(56,189,248,0.18)"></ellipse>
+        <path d="M4.5 5.5v13c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-13"></path>
+        <path d="M4.5 12c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3"></path>
       </svg>`;
   }
   return "";
@@ -146,24 +141,20 @@ function getProjectBannerSvg(type) {
           </linearGradient>
         </defs>
         <rect width="360" height="180" fill="url(#chainBg)" />
-        <!-- IPC connection lines -->
         <line class="ipc-flow" x1="108" y1="92" x2="146" y2="92" stroke="#38bdf8" stroke-width="2" />
         <line class="ipc-flow" x1="214" y1="92" x2="252" y2="92" stroke="#34d399" stroke-width="2" />
-        <!-- Block 1 -->
         <g transform="translate(40,56)">
           <rect width="68" height="72" rx="9" fill="#162344" stroke="#38bdf8" stroke-width="1.4" />
           <text x="10" y="21" fill="#7dd3fc" font-family="JetBrains Mono, monospace" font-size="8.5">NODE_01</text>
           <text x="10" y="38" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="7.5">SHA-256</text>
           <text x="10" y="54" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="7.5">000a9f..</text>
         </g>
-        <!-- Block 2 -->
         <g transform="translate(146,56)">
           <rect width="68" height="72" rx="9" fill="#162344" stroke="#38bdf8" stroke-width="1.4" />
           <text x="10" y="21" fill="#7dd3fc" font-family="JetBrains Mono, monospace" font-size="8.5">MINER</text>
-          <text x="10" y="38" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="7.5">PoW + IPC</text>
+          <text x="10" y="38" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="7.5">PoW + FIFO</text>
           <text x="10" y="54" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="7.5">0004c1..</text>
         </g>
-        <!-- Block 3 -->
         <g transform="translate(252,56)">
           <rect width="68" height="72" rx="9" fill="#162344" stroke="#34d399" stroke-width="1.4" />
           <text x="10" y="21" fill="#6ee7b7" font-family="JetBrains Mono, monospace" font-size="8.5">MERKLE</text>
@@ -171,6 +162,46 @@ function getProjectBannerSvg(type) {
           <text x="10" y="54" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="7.5">VALID OK</text>
         </g>
         <text x="14" y="22" fill="rgba(125,211,252,0.8)" font-family="JetBrains Mono, monospace" font-size="9">POSIX IPC // MULTI-PROCESS CHAIN</text>
+      </svg>`;
+  }
+
+  if (type === "vehicle") {
+    return `
+      <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="iotBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#091a24" />
+            <stop offset="100%" stop-color="#0d1324" />
+          </linearGradient>
+        </defs>
+        <rect width="360" height="180" fill="url(#iotBg)" />
+        <g stroke="rgba(56,189,248,0.09)" stroke-width="1">
+          <line x1="0" y1="60" x2="360" y2="60" />
+          <line x1="0" y1="120" x2="360" y2="120" />
+          <line x1="90" y1="0" x2="90" y2="180" />
+          <line x1="180" y1="0" x2="180" y2="180" />
+          <line x1="270" y1="0" x2="270" y2="180" />
+        </g>
+        <path class="ipc-flow" d="M114 96 C 155 96, 175 48, 225 48 S 285 88, 336 88" fill="none" stroke="#34d399" stroke-width="2.2" />
+        <path class="sonar-wave" d="M126 82 A 22 22 0 0 1 126 110" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" />
+        <path class="sonar-wave sonar-wave-2" d="M138 74 A 34 34 0 0 1 138 118" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" />
+        <path class="sonar-wave sonar-wave-3" d="M150 66 A 46 46 0 0 1 150 126" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round" />
+        <g transform="translate(46,74)">
+          <rect x="4" y="-6" width="16" height="6" rx="2" fill="#475569" />
+          <rect x="42" y="-6" width="16" height="6" rx="2" fill="#475569" />
+          <rect x="4" y="44" width="16" height="6" rx="2" fill="#475569" />
+          <rect x="42" y="44" width="16" height="6" rx="2" fill="#475569" />
+          <rect width="66" height="44" rx="8" fill="#162a3d" stroke="#38bdf8" stroke-width="1.6" />
+          <rect x="14" y="11" width="26" height="22" rx="3" fill="#0b1522" stroke="#34d399" stroke-width="1.1" />
+          <text x="18" y="25" fill="#6ee7b7" font-family="JetBrains Mono, monospace" font-size="8">MCU</text>
+          <circle cx="56" cy="15" r="3" fill="#38bdf8" />
+          <circle cx="56" cy="29" r="3" fill="#38bdf8" />
+        </g>
+        <g transform="translate(198,84)">
+          <rect width="46" height="44" rx="7" fill="rgba(248,113,113,0.16)" stroke="#f87171" stroke-width="1.5" />
+          <text x="7" y="25" fill="#fca5a5" font-family="JetBrains Mono, monospace" font-size="7.5">OBSTACLE</text>
+        </g>
+        <text x="14" y="22" fill="rgba(125,211,252,0.85)" font-family="JetBrains Mono, monospace" font-size="9">EMBEDDED IOT // REMOTE CONTROLLED ROVER</text>
       </svg>`;
   }
 
@@ -183,7 +214,6 @@ function getProjectBannerSvg(type) {
         </linearGradient>
       </defs>
       <rect width="360" height="180" fill="url(#aiBg)" />
-      <!-- Shift matrix -->
       <g transform="translate(24,46)">
         <rect x="0" y="0" width="38" height="18" rx="4" fill="#38bdf8" opacity="0.8" />
         <rect x="44" y="0" width="38" height="18" rx="4" fill="#a78bfa" class="shift-pulse" />
@@ -199,7 +229,6 @@ function getProjectBannerSvg(type) {
 
         <text x="0" y="92" fill="#cbd5e1" font-family="JetBrains Mono, monospace" font-size="8">AI SHIFT MATRIX</text>
       </g>
-      <!-- ROI Chart -->
       <g transform="translate(186,44)">
         <line x1="0" y1="86" x2="146" y2="86" stroke="rgba(148,163,184,0.35)" stroke-width="1" />
         <line x1="0" y1="10" x2="0" y2="86" stroke="rgba(148,163,184,0.35)" stroke-width="1" />
@@ -214,7 +243,7 @@ function getProjectBannerSvg(type) {
 /* =========================================================
    STATE & DOM ELEMENTS
    ========================================================= */
-let activeFilter = null; // { type: "tag" | "category", value: string }
+let activeFilter = null;
 
 const languagesGrid = document.getElementById("languages-grid");
 const technologiesGrid = document.getElementById("technologies-grid");
@@ -323,12 +352,17 @@ function renderProjects() {
          </a>`
       : `<span>${project.title}</span>`;
 
+    const statusHtml = project.status
+      ? `<span class="project-status">${project.status}</span>`
+      : "";
+
     card.innerHTML = `
       <div class="project-banner">${getProjectBannerSvg(project.banner)}</div>
       <div class="project-body">
         <div class="project-top">
           <h3>${titleHtml}</h3>
         </div>
+        ${statusHtml}
         <p class="project-desc">${project.description}</p>
         <div class="project-tags"></div>
       </div>
