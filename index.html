@@ -1,97 +1,144 @@
 <!DOCTYPE html>
-<html lang="an">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Andrei Marius Smedoiu — Computer Engineering @ UniTrento</title>
-<meta name="description" content="BSc Student in Computer, Electronic and Telecommunications Engineering. Progetti in C, sistemi, algoritmi e software.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrei Marius Smedoiu · Portfolio</title>
+  <meta name="description" content="Portfolio of Andrei Marius Smedoiu — BSc Student in Computer, Electronic and Telecommunications Engineering at the University of Trento." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="layout">
-<aside>
-  <img class="avatar" src="https://avatars.githubusercontent.com/u/179920327?v=4" alt="Foto di Andrei Marius Smedoiu">
-  <h1>Andrei Marius Smedoiu</h1>
-  <p class="handle">@smedoiuandrei</p>
-  <ul class="links">
-    <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.88.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><a href="https://github.com/smedoiuandrei">@smedoiuandrei</a></li>
-    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V10h3zM6.5 8.7a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.4c0-1.1 0-2.4-1.5-2.4S13 13.4 13 14.5V19h-3V10h2.8v1.2h.1a3 3 0 0 1 2.7-1.5c2.9 0 3.4 1.9 3.4 4.4z"/></svg><a href="https://www.linkedin.com/in/andrei-smedoiu-897104264">Andrei Smedoiu</a></li>
-    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg><a href="mailto:smedoiuandreimarius05@gmail.com">smedoiuandreimarius05@gmail.com</a></li>
-    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Ala (Trento), Italy</span></li>
-  </ul>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-  <h2>Languages</h2>
-  <div class="chips">
-    <button class="chip" data-f="c">C</button>
-    <button class="chip" data-f="cpp">C++</button>
-    <button class="chip" data-f="java">Java</button>
-    <button class="chip" data-f="python">Python</button>
-    <button class="chip" data-f="mysql">MySQL</button>
-    <button class="chip" data-f="js">JavaScript</button>
-    <button class="chip" data-f="asm">Assembly</button>
-    <button class="chip" data-f="vhdl">VHDL</button>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light or dark theme" title="Switch theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="profile-header">
+        <div class="avatar-ring">
+          <img
+            src="https://avatars.githubusercontent.com/u/179920327?v=4"
+            alt="Foto di Andrei Marius Smedoiu"
+            class="avatar"
+          />
+        </div>
+        <div class="profile-identity">
+          <h1>Andrei Marius Smedoiu</h1>
+          <p class="handle">@smedoiuandrei</p>
+          <span class="status-badge">
+            <span class="status-dot"></span>
+            Open to internships
+          </span>
+        </div>
+      </div>
+
+      <ul class="contact-list">
+        <li>
+          <a href="https://github.com/smedoiuandrei" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+            </svg>
+            <span>@smedoiuandrei</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/andrei-smedoiu-897104264" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            </svg>
+            <span>Andrei Smedoiu</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:smedoiuandreimarius05@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>smedoiuandreimarius05@gmail.com</span>
+          </a>
+        </li>
+        <li class="contact-static">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Ala (Trento), Italy</span>
+        </li>
+      </ul>
+
+      <section class="sidebar-section">
+        <div class="section-label">
+          <h2>Languages</h2>
+          <span class="hint-text">click to filter</span>
+        </div>
+        <div id="languages-grid" class="skills-grid"></div>
+      </section>
+
+      <section class="sidebar-section">
+        <div class="section-label">
+          <h2>Technologies</h2>
+        </div>
+        <div id="technologies-grid" class="skills-grid"></div>
+      </section>
+
+      <section class="sidebar-section">
+        <div class="section-label">
+          <h2>Spoken Languages</h2>
+        </div>
+        <div id="spoken-grid" class="spoken-list"></div>
+      </section>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <header class="content-header">
+        <div class="title-row">
+          <h2>Projects</h2>
+          <span id="project-count" class="count-pill"></span>
+        </div>
+        <p class="bio">
+          BSc Student in Computer, Electronic and Telecommunications Engineering at the
+          <strong>University of Trento</strong> (expected graduation in 2027). Interested in
+          low-level systems, algorithms and software engineering. Looking for internships and collaborations.
+        </p>
+      </header>
+
+      <!-- Active Filter Bar -->
+      <div id="active-filter-bar" class="active-filter-bar hidden">
+        <span>Filtering by: <strong id="active-filter-name"></strong></span>
+        <button id="clear-filter-btn" type="button" class="clear-btn">Reset filter ×</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-grid" class="projects-grid"></div>
+
+      <!-- Categories Section -->
+      <section class="categories-section">
+        <p class="categories-intro">
+          Projects by category <em>(you can also filter by clicking on the chips or any skill icon)</em>
+        </p>
+        <div id="categories-grid" class="categories-grid"></div>
+      </section>
+
+      <footer class="footer">
+        Andrei Marius Smedoiu · BSc Student in Computer, Electronic and Telecommunications Engineering @ University of Trento
+      </footer>
+    </main>
   </div>
 
-  <h2>Technologies</h2>
-  <div class="chips">
-    <button class="chip" data-f="linux">Linux</button>
-    <button class="chip" data-f="bash">Bash</button>
-    <button class="chip" data-f="git">Git</button>
-    <button class="chip" data-f="graphics">Graphics</button>
-    <button class="chip" data-f="ipc">POSIX IPC</button>
-    <button class="chip" data-f="latex">LaTeX</button>
-  </div>
-
-  <h2>Spoken Languages</h2>
-  <div class="chips">
-    <span class="chip">Italiano C2</span>
-    <span class="chip">Română C2</span>
-    <span class="chip">English B2 (IELTS)</span>
-  </div>
-</aside>
-
-<main>
-  <h2 class="title">Projects</h2>
-  <p class="about">BSc Student in Computer, Electronic and Telecommunications Engineering at the University of Trento (expected graduation in 2027). Interested in low-level systems, algorithms and software engineering. Looking for internships and collaborations.</p>
-
-  <div class="grid" id="grid">
-    <article class="card" data-tags="c linux graphics systems">
-      <h3><a class="title" href="https://github.com/smedoiuandrei/aircraft-radar">Aircraft radar</a></h3>
-      <p>Aircraft radar in real-time in C with raylib: rotating scan, real ADS-B data from OpenSky Network and click on an aircraft to see its altitude and speed.</p>
-      <div class="chips"><span class="chip">C</span><span class="chip">Graphics</span><span class="chip">Linux</span><span class="chip">Real data</span></div>
-    </article>
-
-    <article class="card" data-tags="c bash linux ipc systems university git">
-      <h3><a class="title" href="https://github.com/Gelminaio/os-blockchain-project">Blockchain multi-processo</a></h3>
-      <p>Simulation of a blockchain where nodes, miners and clients are separate processes that communicate with POSIX IPC. Simulated proof-of-work, Merkle trees, SHA-256 from scratch and a Bash script to verify the chain.</p>
-      <div class="chips"><span class="chip">C</span><span class="chip">Bash</span><span class="chip">POSIX IPC</span><span class="chip">University</span><span class="chip">Git</span></div>
-    </article>
-
-    <article class="card" data-tags="university ai latex">
-      <h3>Fedrigoni OGA Challenge</h3>
-      <p>Group project on shift scheduling assisted by AI for a manufacturing plant: report, comparative analysis of existing tools and business case with ROI.</p>
-      <div class="chips"><span class="chip">AI</span><span class="chip">University</span><span class="chip">LaTeX</span></div>
-    </article>
-
-    <article class="card" data-tags="js web graphics">
-      <p>My portfolio on GitHub Pages: HTML, CSS and JavaScript without a framework.</p>
-      <div class="chips"><span class="chip">JavaScript</span><span class="chip">Web</span></div>
-    </article>
-  </div>
-
-  <p class="hint">Projects by category <i>(you can also filter by clicking on the chips, e.g., <button class="chip" data-f="c">C</button>)</i></p>
-  <div class="cats">
-    <button class="cat" data-f="systems">Low-level systems</button>
-    <button class="cat" data-f="graphics">Graphics and real data</button>
-    <button class="cat" data-f="ai">AI</button>
-    <button class="cat" data-f="university">University Projects</button>
-  </div>
-  <button class="all" id="all">All Projects</button>
-
-  <footer>Andrei Marius Smedoiu · BSc Student in Computer, Electronic and Telecommunications Engineering @ University of Trento</footer>
-</main>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
