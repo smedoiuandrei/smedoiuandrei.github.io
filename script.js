@@ -40,6 +40,7 @@ const PROJECTS = [
     id: "blockchain-ipc",
     title: "Multi-process blockchain simulation",
     url: "https://github.com/Gelminaio/os-blockchain-project",
+    grade: "10/10",
     description:
       "Operating Systems group project in C and Bash: nodes, miners and clients run as separate processes over POSIX IPC (FIFOs & signals) with a gossip protocol, simulated proof-of-work and Merkle trees. My contributions: SHA-256 from scratch, Merkle root, IPC layer, miner process and Bash verification tool.",
     tags: ["C", "Bash", "Linux", "Git", "University"],
@@ -355,12 +356,16 @@ function renderProjects() {
     const statusHtml = project.status
       ? `<span class="project-status">${project.status}</span>`
       : "";
+    const gradeHtml = project.grade
+      ? `<span class="project-grade" aria-label="Grade: ${project.grade}">${project.grade}</span>`
+      : "";
 
     card.innerHTML = `
       <div class="project-banner">${getProjectBannerSvg(project.banner)}</div>
       <div class="project-body">
         <div class="project-top">
           <h3>${titleHtml}</h3>
+          ${gradeHtml}
         </div>
         ${statusHtml}
         <p class="project-desc">${project.description}</p>

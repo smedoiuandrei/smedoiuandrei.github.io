@@ -509,6 +509,19 @@ a {
   transform: translate(2px, -2px);
 }
 
+.project-grade {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--accent-secondary);
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .project-status {
   display: inline-flex;
   align-items: center;
