@@ -40,7 +40,7 @@ const PROJECTS = [
     id: "blockchain-ipc",
     title: "Multi-process blockchain simulation",
     url: "https://github.com/Gelminaio/os-blockchain-project",
-    grade: "10/10",
+    grade: "Grade:10/10",
     description:
       "Operating Systems group project in C and Bash: nodes, miners and clients run as separate processes over POSIX IPC (FIFOs & signals) with a gossip protocol, simulated proof-of-work and Merkle trees. My contributions: SHA-256 from scratch, Merkle root, IPC layer, miner process and Bash verification tool.",
     tags: ["C", "Bash", "Linux", "Git", "University"],
